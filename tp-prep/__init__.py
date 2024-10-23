@@ -32,4 +32,9 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
+
+    from . import paises
+    app.register_blueprint(paises.bp)
+
+    print(app.url_map)
     return app
